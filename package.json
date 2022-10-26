@@ -1,0 +1,25 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "\"\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iExclusive21/Note-Taker-App.git"
+  },
+  "author": "John Bynum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iExclusive21/Note-Taker-App/issues"
+  },
+  "homepage": "https://github.com/iExclusive21/Note-Taker-App#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
+  }
+}
