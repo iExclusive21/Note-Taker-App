@@ -27,3 +27,17 @@ app.post('/api/notes', (req, res) => {
     fs.writeFileSync('./db/db.json', JSON.stringify(notes));
     res.json(notes);
   });
+
+  //get all notes form db.json
+app.get('/api/notes', (req, res) => {
+    const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8') || '[]');
+    res.json(notes);
+  });
+  
+  //delete single note from db.json
+  app.delete('/api/notes/:id', (req, res) => {
+    const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8') || '[]');
+    const newNotes = notes.filter((note) => note.id !== req.params.id);
+    fs.writeFileSync('./db/db.json', JSON.stringify(newNotes));
+    res.json(newNotes);
+  });
