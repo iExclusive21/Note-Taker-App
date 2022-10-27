@@ -41,3 +41,13 @@ app.get('/api/notes', (req, res) => {
     fs.writeFileSync('./db/db.json', JSON.stringify(newNotes));
     res.json(newNotes);
   });
+
+  //bad request
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  });
+
+  // listing to the server
+app.listen(process.env.PORT || 6006, () => {
+    console.log(`server is running on port 6006`);
+  });
